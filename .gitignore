@@ -8,10 +8,10 @@
 .buildlog/
 .history
 .svn/
-ios/
-macos/
-web/
-android/
+
+
+
+
 
 
 # IntelliJ related

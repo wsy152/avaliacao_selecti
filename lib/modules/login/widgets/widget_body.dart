@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:test_selecti_dev/app/core/utils/snackbar_service.dart';
 import 'package:test_selecti_dev/modules/login/login_controller.dart';
 import 'package:test_selecti_dev/modules/login/widgets/wedget_button.dart';
-import 'package:test_selecti_dev/modules/login/widgets/widget_test_fields.dart';
+import 'package:test_selecti_dev/modules/login/widgets/widget_text_fields.dart';
 
 class WidgetBody extends StatefulWidget {
   const WidgetBody({Key? key}) : super(key: key);

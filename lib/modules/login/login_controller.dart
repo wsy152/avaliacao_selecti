@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:test_selecti_dev/app/core/api/api_response.dart';
 import 'package:test_selecti_dev/app/core/api/login_api.dart';
 import 'package:test_selecti_dev/app/core/utils/snackbar_service.dart';
+import 'package:test_selecti_dev/modules/home/home_module.dart';
 
 class LoginController extends ChangeNotifier implements Disposable {
   final formKey = GlobalKey<FormState>();
@@ -37,7 +38,8 @@ class LoginController extends ChangeNotifier implements Disposable {
       password: password,
     );
     if (response!.responseSucess == true) {
-      //Modular.to.pushNamed(HomeModule.ROUTE);
+      // Modular.to.pushNamed(HomeModule.ROUTE);
+      snackbarService.success("Sucesso");
       isloading = false;
       notifyListeners();
     } else {
