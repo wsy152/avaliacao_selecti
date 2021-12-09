@@ -1,6 +1,7 @@
 import 'package:builders/builders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:test_selecti_dev/app/core/utils/snackbar_service.dart';
 import 'package:test_selecti_dev/modules/login/login_controller.dart';
 import 'package:test_selecti_dev/modules/login/widgets/wedget_button.dart';
 import 'package:test_selecti_dev/modules/login/widgets/widget_test_fields.dart';
@@ -15,6 +16,7 @@ class WidgetBody extends StatefulWidget {
 class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
   @override
   Widget build(BuildContext context) {
+    Modular.get<SnackBarService>()..setAppContext(context);
     return Consumer<LoginController>(builder: (context, presenter) {
       return Form(
         key: controller.formKey,

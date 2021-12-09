@@ -32,7 +32,7 @@ class LoginController extends ChangeNotifier implements Disposable {
     } else {
       isloading = false;
       notifyListeners();
-      // snackbarService.error("${response.msg}");
+      snackbarService.error("${response.msg}");
     }
   }
 
