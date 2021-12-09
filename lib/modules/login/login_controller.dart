@@ -10,6 +10,17 @@ class LoginController extends ChangeNotifier implements Disposable {
   final tPassword = TextEditingController();
   final SnackBarService snackbarService = Modular.get<SnackBarService>();
   late bool isloading = false;
+  late bool isVisibility = false;
+
+  void onclickVisibility() async {
+    if (isVisibility) {
+      isVisibility = false;
+      notifyListeners();
+    } else {
+      isVisibility = true;
+      notifyListeners();
+    }
+  }
 
   void onclickLogin() async {
     if (!formKey.currentState!.validate()) {

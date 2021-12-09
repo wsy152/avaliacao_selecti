@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:test_selecti_dev/app/core/utils/snackbar_service.dart';
 import 'package:test_selecti_dev/modules/login/widgets/widget_body.dart';
 
 class LoginPage extends StatefulWidget {

@@ -7,6 +7,8 @@ class WidgetTextField extends StatelessWidget {
   final String hint;
   final String validatorText;
   final bool password;
+  final Icon icon;
+  final VoidCallback? onPressed;
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyboardType;
@@ -18,9 +20,11 @@ class WidgetTextField extends StatelessWidget {
     required this.label,
     required this.hint,
     required this.validatorText,
+    required this.onPressed,
     this.password = false,
     this.controller,
     this.validator,
+    required this.icon,
     this.keyboardType,
     this.textInputAction,
     this.focusNode,
@@ -37,9 +41,12 @@ class WidgetTextField extends StatelessWidget {
       textInputAction: textInputAction,
       focusNode: focusNode,
       decoration: InputDecoration(
-        labelText: label,
-        hintText: hint,
-      ),
+          labelText: label,
+          hintText: hint,
+          icon: IconButton(
+            icon: icon,
+            onPressed: onPressed,
+          )),
     );
   }
 }

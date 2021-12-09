@@ -26,7 +26,9 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
             child: ListView(
               children: [
                 WidgetTextField(
-                  enabled: true,
+                  onPressed: () => null,
+                  icon: Icon(Icons.email),
+                  enabled: !controller.isloading,
                   label: 'Login',
                   controller: controller.tLogin,
                   hint: 'Digite seu login',
@@ -37,10 +39,15 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
                   height: 20,
                 ),
                 WidgetTextField(
-                  enabled: true,
+                  onPressed: () => controller.onclickVisibility(),
+                  icon: !controller.isVisibility
+                      ? Icon(Icons.visibility_off)
+                      : Icon(Icons.visibility),
+                  enabled: !controller.isloading,
                   label: 'Password',
                   hint: 'Digite seu Password',
                   controller: controller.tPassword,
+                  password: !controller.isVisibility,
                   validatorText: 'Digite seu Password',
                   validator: controller.validatePassword,
                 ),
@@ -48,7 +55,7 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
                   height: 20,
                 ),
                 WidgetButton(
-                  enabled: true,
+                  enabled: !controller.isloading,
                   label: 'Login',
                   isloading: controller.isloading,
                   onPressed: () => controller.onclickLogin(),
