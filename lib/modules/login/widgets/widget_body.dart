@@ -26,8 +26,10 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
                 WidgetTextField(
                   enabled: true,
                   label: 'Login',
+                  controller: controller.tLogin,
                   hint: 'Digite seu login',
                   validatorText: 'Digite se login',
+                  validator: controller.validateLogin,
                 ),
                 SizedBox(
                   height: 20,
@@ -36,7 +38,9 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
                   enabled: true,
                   label: 'Password',
                   hint: 'Digite seu Password',
+                  controller: controller.tPassword,
                   validatorText: 'Digite seu Password',
+                  validator: controller.validatePassword,
                 ),
                 SizedBox(
                   height: 20,
@@ -44,8 +48,8 @@ class _WidgetBodyState extends ModularState<WidgetBody, LoginController> {
                 WidgetButton(
                   enabled: true,
                   label: 'Login',
-                  isloading: false,
-                  onPressed: () {},
+                  isloading: controller.isloading,
+                  onPressed: () => controller.onclickLogin(),
                 ),
               ],
             ),

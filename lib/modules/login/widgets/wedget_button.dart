@@ -32,6 +32,5 @@ class WidgetButton extends StatelessWidget {
                   )),
       ),
     );
-    ;
   }
 }
